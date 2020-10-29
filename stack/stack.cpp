@@ -2,25 +2,19 @@
 
 using namespace std;
 
-int stack[20];
+#define MAX 20
+
+int stack[MAX];
 int top = -1;
-int bottom;
 
 bool isEmpty()
 {
-	if (top == -1)
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
+	return top == -1;
 }
 
 void push(int value)
 {
-	if (top == 19)
+	if (top == MAX - 1)
 	{
 		cout << "Stack is full!" << endl;
 	}
@@ -70,13 +64,9 @@ void displayStack()
 	}
 }
 
-void count()
+void writeCount()
 {
-	int contor = 1;
-	for (int i = 0; i <= top; i++)
-	{
-		contor++;
-	}
+	cout << top + 1 << endl;
 }
 
 int main()
@@ -89,7 +79,7 @@ int main()
 	push(3);
 	push(10);
 	displayStack();
-	count();
+	writeCount();
 	showTop();
 	return 0;
 }
