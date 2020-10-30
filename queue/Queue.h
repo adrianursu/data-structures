@@ -27,7 +27,7 @@ public:
 
 bool Queue::isEmpty()
 {
-	return (front == -1 && rear == -1);
+	return (front == rear);
 }
 
 bool Queue::isFull()
@@ -37,8 +37,6 @@ bool Queue::isFull()
 
 void Queue::dequeue()
 {
-	int deletedElement;
-
 	if (isEmpty())
 	{
 		cout << "Queue is empty!" << endl;
